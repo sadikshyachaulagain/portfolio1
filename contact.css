@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #9333ea;
+    --primary-color-dark: #7a22c9;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--extra-light);
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav_content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+ul li a {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul li a:hover, ul li a.active {
+    color: #7a22c9;
+    border-bottom: 2px #7a22c9;
+  
+}
+
+/* Contact Section */
+.contact {
+    padding: 8rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact_container {
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contact_info h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.contact_info p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.social_links a {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: 0.3s;
+}
+
+.social_links a:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Form */
+.contact_form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact_form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.contact_form form input,
+.contact_form form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.contact_form form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact_form form button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact_form form button:hover {
+    background: var(--primary-color-dark);
+}
+
+/* Responsive */
+@media screen and (max-width: 750px) {
+    .contact_container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    ul {
+        flex-direction: column;
+        background: var(--extra-light);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        display: none;
+    }
+
+    ul li {
+        margin: 10px 0;
+    }
+
+    .contact_form {
+        padding: 1.5rem;
+    }
+}
+/* Footer */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+    .floating_social {
+        position: fixed;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+    }
+
+    .floating_social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #7a22c9;
+        color: rgb(239, 237, 237);
+        font-size: 24px;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+
+    .floating_social a:hover {
+        background-color: #007bff;
+    }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Floating Social Icons -->
+    <div class="floating_social">
+        
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav_content">
+            <div class="logo"><a href="index.html">Sadikshya</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="contact_container">
+            <div class="contact_info">
+                <h1>Contact Me</h1>
+                <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bhaktapur, Balkot</p>
+                <p><i class="fas fa-phone"></i> 9848582258</p>
+                <p><i class="fas fa-envelope"></i> sadikshyachaulagain@gmail.com</p>
+                
+                
+            </div>
+            <div class="contact_form">
+                <h2>Send a Message</h2>
+                <form id="contact-form" onsubmit="sendEmail(); return false;">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Sadikshya Chaulagain. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sending Email -->
+    <script src="contact.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+    
+            Email.send({
+                SecureToken: "your-secure-token",  // Get this from smtpjs.com (DO NOT use password)
+                To: "sadikshyachaulagain7@gmail.com",
+                From: email,
+                Subject: subject || "New Contact Form Enquiry",
+                Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
+            }).then(
+                response => {
+                    alert("Message sent successfully!");
+                    document.getElementById("contact-form").reset();
+                }
+            ).catch(
+                error => alert("Error sending message: " + error)
+            );
+        }
+    </script>
+    
+
+</body>
+</html>
